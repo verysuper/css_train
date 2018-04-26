@@ -18,17 +18,71 @@
 			border:3px solid #630;
 			padding:10px;
         }
-        header{
-			background-color:#9797ff;
+		header{
+			/*background-color:#9797a6;*/
+		}
+		nav ul{
+			background-color: #fc9;
+			list-style: none; /*去除選單前面的符號*/
+			overflow: auto; /*限制於本區塊的float效果，不去影響其他區域*/
+			padding-left: 0px; /*內容靠左*/
+		}
+		nav ul li{
+			float: left;
+		}
+		nav ul li a{
+			color: #630; /*字的顏色*/
+			text-decoration: none;/*字的底線*/
+			padding: 10px; /*內容置中效果*/
+			display: block;
+			width: 100px;
+			text-align: center;
+		}
+		nav ul li a:hover{
+			color: #f60; /*滑鼠移入後的顏色*/
+			background-color:#ff9;
+			text-decoration: none; /*若滑鼠移入前有加，這再加一次*/
+		}		
+		/*for 2nd menu*/
+		nav ul li ul{
+			position: absolute;
+			overflow: visible;
+		}
+		nav ul li ul li{
+			float: none; /*取消上一層的float狀態*/
+		}
+		nav ul li ul li a{
+			/*以繼承可省略*/
+		}
+		nav ul li ul li ul{
+			margin-left: 120px; /*第3層向右移動*/
+			margin-top: -41px; /*第3層向上移動*/
+		}
+		/*for hidden menu*/
+		nav ul li ul{
+			visibility:hidden; /*功能:能見度*/
+		}
+		nav ul li:hover ul{ 			
+			visibility: visible; /*滑鼠一進去顯示出來*/
+		}
+		nav ul li:hover ul li ul{			
+			visibility: hidden;
+		}
+		nav ul li ul li:hover ul{
+			visibility: visible; /*滑鼠一進去顯示出來*/
+		}
+		h4{
+			text-indent:20px;/* 縮排 */
+			font-style:italic;/* 斜體字 */
 		}
         section{
-			background-color:#ffcfbf;
+			/*background-color:#ffcfbf;*/
 			width:340px;
 			float:left; /*與aside並排*/
 			padding-left:10px; /*注意總寬度尺寸*/
 		}
         aside{
-			background-color:#b3ff99;
+			/*background-color:#b3ff99;*/
 			width:380px; /*400減20←因有做padding*/
 			float:left; /*與section並排*/
 			text-align: center;
@@ -48,6 +102,35 @@
             <header>
                 <h1>背包客旅行札記</h1>
                 <h4>旅行是一種休息，而休息是為了走更長遠的路</h4>
+                <nav>
+                        <ul><!-- 3層選單 -->
+                            <li><a href="#">關於背包客</a>
+                                <ul>
+                                    <li><a href="#">item1</a></li>
+                                    <li><a href="#">item2</a>
+                                        <ul>
+                                            <li><a href="#">item2-1</a></li>
+                                            <li><a href="#">item2-2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">國內旅遊</a></li>
+                            <li><a href="#">國外旅遊</a></li>
+                            <li><a href="#">與我聯絡</a>
+                                <ul>
+                                    <li><a href="#">item1</a></li>
+                                    <li><a href="#">item2</a>
+                                        <ul>
+                                            <li><a href="#">item2-1</a></li>
+                                            <li><a href="#">item2-2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">item3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
             </header>
             <section>
                 <h2>Hello World!</h2>
