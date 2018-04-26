@@ -3,6 +3,45 @@
     <head>
         <meta charset="utf8">
         <title>index</title>
+        <style type="text/CSS">
+        /* css 的每個 selector 皆是一個 box model ，
+        參考 https://www.w3schools.com/css/css_boxmodel.asp*/
+        body{
+            background-color: #ffe599;
+            font-family: "微軟正黑體";
+        }
+        #id_wrapper{
+            background-color:#fff;
+			width:750px;
+			margin-left:auto;
+			margin-right:auto;
+			border:3px solid #630;
+			padding:10px;
+        }
+        header{
+			background-color:#9797ff;
+		}
+        section{
+			background-color:#ffcfbf;
+			width:340px;
+			float:left; /*與aside並排*/
+			padding-left:10px; /*注意總寬度尺寸*/
+		}
+        aside{
+			background-color:#b3ff99;
+			width:380px; /*400減20←因有做padding*/
+			float:left; /*與section並排*/
+			text-align: center;
+			padding: 10px; /*內容與邊距離 10px 注意總寬度尺寸*/
+		}
+		footer{
+			background-color:#ffcc99;
+			clear:both;/* 上面方框若有float屬性，後面方框必須加入clear屬性，避免版面互擠 */
+			text-align: center;  /* 調整cantainer位置 */
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+        </style>
     </head>
     <body>
         <div id="id_wrapper">
